@@ -60,7 +60,5 @@ def main():
     countSort(entrada)
     print(entrada)
     sortlib.print_status(entrada)
-    while 1 != 0:
-        pass
         
 main()
