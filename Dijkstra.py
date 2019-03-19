@@ -39,14 +39,11 @@ class Grafo:
                 if(nafila[v] == True and w + self.chave[u] < self.chave[v]):
                     self.pai[v]   = u
                     self.chave[v] = w + self.chave[u]
-                    heapq.heappush(heap, (w, v))
-                   
-        for i in range(self.V-1):
-            print("V[",i+1,"] tem peso:", self.chave[i+1], "vindo pelo vertice:", self.pai[i+1])
-            
+                    heapq.heappush(heap, (self.chave[v],v))
+                       
         print('Custo do caminho:', self.chave[self.V-1])
 def calculaMenorCaminho(instancia):
-    print("Instancia", instancia)
+    print("Instancia Dijkstra:", instancia)
     
     f = open(instancia, "r")
     
@@ -62,6 +59,6 @@ def calculaMenorCaminho(instancia):
             
     
 calculaMenorCaminho("instancias-grafo/dij10.txt")
-#alculaMenorCaminho("instancias-grafo/dij20.txt")
-#alculaMenorCaminho("instancias-grafo/dij40.txt")
-#alculaMenorCaminho("instancias-grafo/dij50.txt")
+calculaMenorCaminho("instancias-grafo/dij20.txt")
+calculaMenorCaminho("instancias-grafo/dij40.txt")
+calculaMenorCaminho("instancias-grafo/dij50.txt")
